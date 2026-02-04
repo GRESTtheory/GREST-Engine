@@ -1,40 +1,33 @@
-# GREST-Engine
-**Geometric Resistance of Expanding Space-Time (GREST): Galactic Dynamics Validator**
+# GREST-Engine Validation (v1.0)
 
-## Overview
-This repository contains the Python implementation of the GREST framework. It validates the theory across three distinct astrophysical scales: Dwarf Stars, Spiral Galaxies, and Massive Super-Spirals.
+This repository is the official source of truth for the **GREST Effective Field Law** (v1.0). It contains the master validation script and data used to predict gravitational dynamics across galactic and stellar scales without the use of dark matter parameters.
 
-**Paper Preprint:** [https://doi.org/10.5281/zenodo.18473062](https://doi.org/10.5281/zenodo.18473062)  
-**DOI:** 10.5281/zenodo.18473062
+## Unit-Locked Constants
+To ensure reproducibility, all tests use the following fixed values:
+* **H0**: 73.0 km/s/Mpc
+* **c**: 299,792,458 m/s
+* **a0**: 1.129e-10 m/s^2 (Calculated as (c * H0) / 2π)
+
+## Governing Formula
+Observed acceleration ($g_{obs}$) is derived from Newtonian acceleration ($g_N$):
+$$g_{obs} = \sqrt{g_N^2 + g_N a_0}$$
+
+## Validation Results
+
+### Internal (Galactic)
+| System | Observed | GREST Predicted | Accuracy |
+| :--- | :--- | :--- | :--- |
+| NGC 6503 | 133.0 km/s | 133.28 km/s | 99.79% |
+| NGC 1052-DF2 | 7.9 km/s | 7.40 km/s | 93.66% |
+| NGC 7331 | 205.0 km/s | 203.81 km/s | 99.42% |
+
+### External (Stellar)
+* **Gaia Wide Binaries**: Predicts a **2.19x** gravity boost at 20 kAU, aligning with reported anomalous excess velocities.
+
+## Files
+* `grest_engine_v1.py`: The master validation script.
+* `GREST_Validation_Final.csv`: Detailed validation data.
+* `references.bib`: BibTeX entries for data sources.
 
 ---
-
-## Key Results
-
-### 1. Galaxy Rotation Curves (Dwarf vs Giant)
-**Visual Proof of Universality:** The GREST model (Red Line) fits the observed data (Black Dots) for both dwarf and giant galaxies using a single, zero-parameter universal constant derived from the Hubble flow.
-
-![Universal Test](grest_universal_proof.png)
-*Left: Dwarf Galaxy NGC 6503. Right: Giant Galaxy NGC 7331.*
-
-### 2. The "Dark Matter" Substitute
-**Single Galaxy Validation (NGC 6503):** Standard Newtonian gravity (Dashed Line) fails to explain the rotation speed at the edge of the galaxy. GREST (Red Line) maintains the flat rotation curve naturally, mimicking the effect of Dark Matter without requiring it.
-
-![NGC 6503 Result](grest_real_data_test.png)
-
-### 3. Micro-Scale Gravity (Wide Binaries)
-**The Low-Acceleration Limit:** GREST successfully predicts the "gravity boost" observed in wide binary stars (Gaia DR3 data) at separations of 2–10 kAU.
-
-![Wide Binaries](grest_wide_binary_test.png)
-*The red line shows the GREST prediction matching the deviation from Newton (dashed line) at low accelerations.*
-
----
-
-## Validation Suite Files
-* **`grest_engine.py`**: The core theoretical model.
-* **`grest_real_test.py`**: Validation script for NGC 6503.
-* **`grest_test_universal.py`**: Universality script (Small vs Giant).
-* **`grest_test_binaries.py`**: Wide Binary script (Gaia Data).
-
-## License
-MIT License
+**DOI**: [Pending Zenodo Submission]
