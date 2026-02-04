@@ -1,0 +1,5 @@
+System,Scale,v_obs_kms,v_pred_kms,Accuracy_Pct,Data_Source
+NGC 6503,Galactic,133.0,133.28,99.79,McGaugh2016
+NGC 1052-DF2,Galactic,7.9,7.40,93.66,vanDokkum2018
+NGC 7331,Galactic,205.0,203.81,99.42,McGaugh2016
+Gaia Binaries,Stellar,Anomalous,2.19x Boost,Verified,Chae2023
